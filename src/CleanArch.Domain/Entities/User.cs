@@ -20,6 +20,12 @@ namespace CleanArch.Domain.Entities
             Id = id;
             _name = name;
         }
+        public static User Create(UserId id, UserName userName)
+        {
+            var user = new User(id, userName);
+            user.AddEvents(new UserAdded(user));
+            return user;
+        }
         public void AddAddress(UserAddress userAddress)
         {
             var alreadyExists = _addresses.Any(a => a.Address == userAddress.Address);
@@ -41,7 +47,7 @@ namespace CleanArch.Domain.Entities
             _addresses.Remove(userAddress);
             AddEvents(new UserAddressRemoved(this,userAddress));
         }
-
+        
         private UserAddress GetAdderss(string address)
         {
             var userAddress = _addresses.SingleOrDefault(a => a.Address == address);
