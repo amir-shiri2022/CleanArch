@@ -5,15 +5,19 @@ VisualStudioVersion = 17.2.32516.85
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E945B265-FFB2-44D1-BCD4-28FAE46760A4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArch.Domain", "src\CleanArch.Domain\CleanArch.Domain.csproj", "{927FDCC3-E45C-4706-955A-EF768EB192AC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArch.Domain", "src\CleanArch.Domain\CleanArch.Domain.csproj", "{927FDCC3-E45C-4706-955A-EF768EB192AC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{586A17F8-640F-4958-85A9-9EFA767DD03B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArch.Shared.Abstractions", "src\Shared\CleanArch.Abstractions\CleanArch.Shared.Abstractions.csproj", "{683CE0A0-5518-48FD-8358-DB85C6CA3BC0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArch.Shared.Abstractions", "src\Shared\CleanArch.Abstractions\CleanArch.Shared.Abstractions.csproj", "{683CE0A0-5518-48FD-8358-DB85C6CA3BC0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArch.Shared", "src\Shared\CleanArch.Shared\CleanArch.Shared.csproj", "{3580FC6D-7455-4941-B5D5-CB29493A129F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArch.Shared", "src\Shared\CleanArch.Shared\CleanArch.Shared.csproj", "{3580FC6D-7455-4941-B5D5-CB29493A129F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArch.Api", "src\CleanArch.Api\CleanArch.Api.csproj", "{029BBADB-0571-438D-B585-87189E6875C4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArch.Api", "src\CleanArch.Api\CleanArch.Api.csproj", "{029BBADB-0571-438D-B585-87189E6875C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArch.Application", "src\CleanArch.Application\CleanArch.Application.csproj", "{572C017E-B9E2-4DFE-8017-9887F8998F30}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArch.Infrastructure", "src\CleanArch.Infrastructure\CleanArch.Infrastructure.csproj", "{0395D54D-42B5-4492-8B20-F09501B02968}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,6 +41,14 @@ Global
 		{029BBADB-0571-438D-B585-87189E6875C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{029BBADB-0571-438D-B585-87189E6875C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{029BBADB-0571-438D-B585-87189E6875C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{572C017E-B9E2-4DFE-8017-9887F8998F30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{572C017E-B9E2-4DFE-8017-9887F8998F30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{572C017E-B9E2-4DFE-8017-9887F8998F30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{572C017E-B9E2-4DFE-8017-9887F8998F30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0395D54D-42B5-4492-8B20-F09501B02968}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0395D54D-42B5-4492-8B20-F09501B02968}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0395D54D-42B5-4492-8B20-F09501B02968}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0395D54D-42B5-4492-8B20-F09501B02968}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -47,6 +59,8 @@ Global
 		{683CE0A0-5518-48FD-8358-DB85C6CA3BC0} = {586A17F8-640F-4958-85A9-9EFA767DD03B}
 		{3580FC6D-7455-4941-B5D5-CB29493A129F} = {586A17F8-640F-4958-85A9-9EFA767DD03B}
 		{029BBADB-0571-438D-B585-87189E6875C4} = {E945B265-FFB2-44D1-BCD4-28FAE46760A4}
+		{572C017E-B9E2-4DFE-8017-9887F8998F30} = {E945B265-FFB2-44D1-BCD4-28FAE46760A4}
+		{0395D54D-42B5-4492-8B20-F09501B02968} = {E945B265-FFB2-44D1-BCD4-28FAE46760A4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {05A0080B-A24F-460F-9312-9A825887465B}
