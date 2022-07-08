@@ -8,9 +8,8 @@ namespace CleanArch.Infrastructure.EF.Context
     public class WriteDbContext : DbContext
     {
         public DbSet<User> Users { get; set; }
-        public WriteDbContext(DbContextOptions options): base(options)
+        public WriteDbContext(DbContextOptions<WriteDbContext> options): base(options)
         {
-
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

@@ -21,7 +21,7 @@ namespace CleanArch.Infrastructure.EF
             services.AddScoped<IUserRepository, UserRepository>();
             var options = configuration.GetOptions<PostgresOptions>("Postgres");
             services.AddDbContext<WriteDbContext>(ctx => ctx.UseNpgsql(options.ConnectionString));
-
+            services.AddDbContext<ReadDbContext>(ctx => ctx.UseNpgsql(options.ConnectionString));
             return services;
         }
     }
