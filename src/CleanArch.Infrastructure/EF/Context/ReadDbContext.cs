@@ -10,7 +10,6 @@ namespace CleanArch.Infrastructure.EF.Context
         public ReadDbContext(DbContextOptions<ReadDbContext> options) : base( options )
         {
         }
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.HasDefaultSchema("cleanArch");
