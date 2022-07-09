@@ -1,4 +1,5 @@
 ﻿using CleanArch.Infrastructure.EF;
+using CleanArch.Shared.Queries;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -14,6 +15,7 @@ namespace CleanArch.Infrastructure
         public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddPostgres(configuration);
+            services.AddQueries();
 
             return services;
         }

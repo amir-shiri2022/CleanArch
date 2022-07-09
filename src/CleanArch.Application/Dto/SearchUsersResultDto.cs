@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace CleanArch.Application.Dto
 {
-    public class UserDto
+    public class SearchUsersResultDto
     {
-        public Guid Id { get; set; }
         public string Name { get; set; }
-
     }
 }

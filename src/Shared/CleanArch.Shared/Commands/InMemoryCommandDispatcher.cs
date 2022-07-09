@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace CleanArch.Shared.Commands
 {
-    public class InMemoryDispatcher : ICommandDispatcher
+    public class InMemoryCommandDispatcher : ICommandDispatcher
     {
         private readonly IServiceProvider _serviceProvider;
 
-        public InMemoryDispatcher(IServiceProvider serviceProvider)
+        public InMemoryCommandDispatcher(IServiceProvider serviceProvider)
         {
             _serviceProvider = serviceProvider;
         }
