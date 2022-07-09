@@ -1,4 +1,6 @@
 ﻿using CleanArch.Infrastructure.EF;
+using CleanArch.Infrastructure.Logging;
+using CleanArch.Shared.Abstractions.Commands;
 using CleanArch.Shared.Queries;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -16,6 +18,7 @@ namespace CleanArch.Infrastructure
         {
             services.AddPostgres(configuration);
             services.AddQueries();
+            services.TryDecorate(typeof(ICommandHandler<>), typeof(LoggingCommandHandlerDecorator<>));
 
             return services;
         }
