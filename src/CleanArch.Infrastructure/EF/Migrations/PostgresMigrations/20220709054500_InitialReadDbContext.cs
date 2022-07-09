@@ -35,14 +35,14 @@ namespace CleanArch.Infrastructure.EF.Migrations.PostgresMigrations
                     Address = table.Column<string>(type: "text", nullable: false),
                     City = table.Column<string>(type: "text", nullable: false),
                     PostalCode = table.Column<string>(type: "text", nullable: false),
-                    UserReadModelId = table.Column<Guid>(type: "uuid", nullable: false)
+                    UserId = table.Column<Guid>(type: "uuid", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_UserAddresses", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_UserAddresses_Users_UserReadModelId",
-                        column: x => x.UserReadModelId,
+                        name: "FK_UserAddresses_Users_UserId",
+                        column: x => x.UserId,
                         principalSchema: "cleanArch",
                         principalTable: "Users",
                         principalColumn: "Id",
@@ -50,10 +50,10 @@ namespace CleanArch.Infrastructure.EF.Migrations.PostgresMigrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_UserAddresses_UserReadModelId",
+                name: "IX_UserAddresses_UserId",
                 schema: "cleanArch",
                 table: "UserAddresses",
-                column: "UserReadModelId");
+                column: "UserId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

@@ -1,6 +1,7 @@
 using CleanArch.Application;
 using CleanArch.Infrastructure;
 using CleanArch.Shared;
+using CleanArch.Shared.Commands;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +13,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddShared();
 builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddApplications();
+
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())

@@ -18,7 +18,7 @@ namespace CleanArch.Infrastructure.EF.Config
             builder.ToTable("Users");
             builder.HasKey(u => u.Id);
             builder.HasMany(u => u.UserAddresses)
-                .WithOne(ua => ua.UserReadModel);     
+                .WithOne(ua => ua.User);     
         }
 
         public void Configure(EntityTypeBuilder<UserAddressReadModel> builder)

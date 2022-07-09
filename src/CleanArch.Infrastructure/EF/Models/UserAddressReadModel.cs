@@ -7,6 +7,6 @@
         public string City { get; set; }
         public string PostalCode { get; set; }
 
-        public UserReadModel UserReadModel { get; set; }
+        public UserReadModel User { get; set; }
     }
 }

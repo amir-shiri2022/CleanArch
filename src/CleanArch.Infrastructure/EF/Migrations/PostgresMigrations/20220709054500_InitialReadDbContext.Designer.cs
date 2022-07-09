@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace CleanArch.Infrastructure.EF.Migrations.PostgresMigrations
 {
     [DbContext(typeof(ReadDbContext))]
-    [Migration("20220708112645_InitialReadDbContext")]
+    [Migration("20220709054500_InitialReadDbContext")]
     partial class InitialReadDbContext
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -43,12 +43,12 @@ namespace CleanArch.Infrastructure.EF.Migrations.PostgresMigrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<Guid>("UserReadModelId")
+                    b.Property<Guid>("UserId")
                         .HasColumnType("uuid");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UserReadModelId");
+                    b.HasIndex("UserId");
 
                     b.ToTable("UserAddresses", "cleanArch");
                 });
@@ -73,13 +73,13 @@ namespace CleanArch.Infrastructure.EF.Migrations.PostgresMigrations
 
             modelBuilder.Entity("CleanArch.Infrastructure.EF.Models.UserAddressReadModel", b =>
                 {
-                    b.HasOne("CleanArch.Infrastructure.EF.Models.UserReadModel", "UserReadModel")
+                    b.HasOne("CleanArch.Infrastructure.EF.Models.UserReadModel", "User")
                         .WithMany("UserAddresses")
-                        .HasForeignKey("UserReadModelId")
+                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("UserReadModel");
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("CleanArch.Infrastructure.EF.Models.UserReadModel", b =>

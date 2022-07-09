@@ -1,10 +1,6 @@
 ﻿using CleanArch.Domain.Factories;
+using CleanArch.Shared.Commands;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CleanArch.Application
 {
@@ -12,6 +8,8 @@ namespace CleanArch.Application
     {
         public static IServiceCollection AddApplications(this IServiceCollection services)
         {
+            services.AddCommands();
+
             services.AddSingleton<IUserFactory, UserFactory>();
             return services;
         }

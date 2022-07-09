@@ -28,16 +28,7 @@ namespace CleanArch.Shared.Services
                 var dbContext = scope.ServiceProvider.GetRequiredService(dbContextType) as DbContext;
                 if (dbContext is null) continue;
 
-                try
-                {
-                    await dbContext.Database.MigrateAsync(cancellationToken);
-
-                }
-                catch (Exception e)
-                {
-
-                    throw;
-                }
+                await dbContext.Database.MigrateAsync(cancellationToken);
             }
         }
 

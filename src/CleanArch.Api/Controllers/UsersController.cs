@@ -1,9 +1,11 @@
-﻿using CleanArch.Application.Dto;
+﻿using CleanArch.Application.Commands;
+using CleanArch.Application.Dto;
 using CleanArch.Domain.Entities;
 using CleanArch.Domain.Factories;
 using CleanArch.Domain.Repositories;
 using CleanArch.Infrastructure.EF.Context;
 using CleanArch.Infrastructure.EF.Models;
+using CleanArch.Shared.Abstractions.Commands;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -11,24 +13,18 @@ namespace CleanArch.Api.Controllers
 {
     public class UsersController : BaseController
     {
-        private readonly IUserRepository _userRepository;
-        private readonly IUserFactory _factory;
+        private readonly ICommandDispatcher _commandDispatcher;
         private readonly ReadDbContext _readDbContext;
-        public UsersController(
-             IUserRepository userRepository
-            , IUserFactory factory
-            , ReadDbContext readDbContext)
+        public UsersController(ReadDbContext readDbContext, ICommandDispatcher commandDispatcher)
         {
-            _userRepository = userRepository;
-            _factory = factory;
             _readDbContext = readDbContext;
+            _commandDispatcher = commandDispatcher;
         }
         [HttpPost]
-        public async Task<ActionResult> Post([FromBody] UserDto command)
+        public async Task<ActionResult> Post([FromBody] CreateUserWithAddress command)
         {
-            var user = _factory.Create(command.Id, command.Name);
-            await _userRepository.AddAsync(user);
-            return Ok(user);
+            await _commandDispatcher.DispatchAsync(command);
+            return Ok();
         }
         [HttpGet]
         public async Task<ActionResult<List<UserReadModel>>> Get([FromQuery] string SearchPhrase,CancellationToken cancellationToken)
